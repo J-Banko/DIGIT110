@@ -1,0 +1,20 @@
+start = xml
+xml = element xml {introduction, preamble, indictment, warnings, denunciation, conclusion, sig}
+
+introduction = element introduction {text}
+preamble = element preamble {text}
+indictment = element indictment {(text | charge)+}
+
+charge = element charge {n, text}
+n = attribute n {xsd:integer}
+
+warnings = element warnings {text}
+
+denunciation = element denunciation {text}
+
+conclusion = element conclusion {text}
+
+sig = element sig {signer}
+
+signer = element signer {(text, rep, n)}
+rep = attribute rep {"newHampshire" | "Massachusetts" | "rhodeIsland" | "connecticut" | "newYork" | "newJersey" | "Pennsylvania" | "Delaware" | "Maryland" | "Virginia" | "northCarolina" | "southCarolina" | "georgia"}
